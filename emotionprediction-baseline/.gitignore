@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.pkl
+*.ckpt
+outputs/
+results/*.json
+.ipynb_checkpoints/
