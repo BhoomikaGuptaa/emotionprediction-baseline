@@ -6,7 +6,7 @@ This is the zero-shot floor for the utterance half of the pipeline: a trained ge
 
 ## Results (full IEMOCAP test, 1592 points)
 
-| Metric | Parrot floor | Zero-shot Qwen2.5-7B | Zero-shot GPT-4o-mini | Dialogue-sim Qwen2.5-7B | Dialogue-sim Llama-3.2-3B |
+| Metric | Parrot floor | Zero-shot Qwen2.5-7B | Zero-shot GPT-4o-mini | Dialogue-sim Qwen2.5-7B | Dialogue-sim Llama-3.2-3B( original repo used this) |
 | --- | --- | --- | --- | --- | --- |
 | BLEU | **1.56** | 0.70 | 0.83 | 0.77 | 1.06 |
 | chrF | 12.91 | 10.84 | 12.01 | **15.73** | 15.31 |
