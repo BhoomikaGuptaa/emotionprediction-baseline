@@ -18,6 +18,6 @@
 
 | Dataset | Weighted F1 | Macro F1 | Accuracy | Parse-fail |
 | --- | --- | --- | --- | --- |
-| IEMOCAP | | | | |
-| MELD | | | | |
-| EmoryNLP | | | | |
+| IEMOCAP | 0.6702| 0.6623| 0.6677| 0.9%|
+| MELD | 0.4107|0.2559 |0.4236 |0.04% |
+| EmoryNLP | 0.2646| 0.2365|0.2727 | 0.0%|
