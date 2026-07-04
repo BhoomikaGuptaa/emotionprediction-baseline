@@ -1,0 +1,30 @@
+{
+  "config": {
+    "method": "dialogue-sim inference (thinking mode)",
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "split": "test",
+    "n": 1592,
+    "labels_in_history": true,
+    "temperature": 0.3,
+    "top_p": 0.95,
+    "max_new_tokens": 512,
+    "max_hist": 12,
+    "seed": 42,
+    "tag_stats": {
+      "unclosed": 1460,
+      "clean": 66,
+      "no_tag": 66
+    },
+    "dtype": "torch.bfloat16"
+  },
+  "metrics": {
+    "bleu": 0.9974143743918541,
+    "chrf": 15.325514645313987,
+    "rouge1": 0.12678892921724258,
+    "rouge2": 0.022588830521153437,
+    "rougeL": 0.10737939577981809,
+    "meteor": 0.06848543579053303,
+    "bertscore_f1": 0.08826497942209244,
+    "sbert_cosine": 0.1999422162771225
+  }
+}

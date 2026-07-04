@@ -1,0 +1,31 @@
+{
+  "config": {
+    "method": "dialogue-sim inference (thinking mode)",
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "split": "test",
+    "n": 1592,
+    "labels_in_history": true,
+    "temperature": 0.3,
+    "top_p": 0.95,
+    "max_new_tokens": 512,
+    "max_hist": 12,
+    "seed": 42,
+    "tag_stats": {
+      "unclosed": 1460,
+      "clean": 66,
+      "no_tag": 66
+    },
+    "dtype": "torch.bfloat16",
+    "postprocess": "speaker-tag prefix (with or without emotion parens) stripped from 459 preds"
+  },
+  "metrics": {
+    "bleu": 1.0599506538366235,
+    "chrf": 15.309594409101948,
+    "rouge1": 0.12815804999546115,
+    "rouge2": 0.022868150195748324,
+    "rougeL": 0.10883424032359482,
+    "meteor": 0.06879641387058463,
+    "bertscore_f1": 0.09185917675495148,
+    "sbert_cosine": 0.204166442155838
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "config": {
+    "method": "dialogue-sim inference (thinking mode)",
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "split": "test",
+    "n": 1592,
+    "labels_in_history": true,
+    "temperature": 0.3,
+    "top_p": 0.95,
+    "max_new_tokens": 512,
+    "max_hist": 12,
+    "seed": 42,
+    "tag_stats": {
+      "clean": 1592
+    },
+    "dtype": "torch.bfloat16"
+  },
+  "metrics": {
+    "bleu": 0.6223293023312588,
+    "chrf": 15.85570133755322,
+    "rouge1": 0.11773242178884719,
+    "rouge2": 0.01730559270223859,
+    "rougeL": 0.09760474055568182,
+    "meteor": 0.065069515389684,
+    "bertscore_f1": 0.0648716390132904,
+    "sbert_cosine": 0.19301922619342804
+  }
+}
