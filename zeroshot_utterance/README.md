@@ -8,14 +8,14 @@ This is the zero-shot floor for the utterance half of the pipeline: a trained ge
 
 | Metric | Parrot floor | Zero-shot Qwen2.5-7B | OpenAI (gpt-4o-mini) |
 | --- | --- | --- | --- |
-| BLEU | 1.56 | 0.70 | |
-| chrF | 12.91 | 10.84 | |
-| ROUGE-1 | 0.120 | 0.111 | |
-| ROUGE-2 | 0.027 | 0.018 | |
-| ROUGE-L | 0.105 | 0.100 | |
-| METEOR | 0.061 | 0.046 | |
-| BERTScore-F1 | 0.103 | 0.117 | |
-| SBERT cosine | 0.236 | 0.210 | |
+| BLEU | 1.56 | 0.70 |0.83 |
+| chrF | 12.91 | 10.84 |12.01 |
+| ROUGE-1 | 0.120 | 0.111 |0.125 |
+| ROUGE-2 | 0.027 | 0.018 |0.022 |
+| ROUGE-L | 0.105 | 0.100 | 0.113|
+| METEOR | 0.061 | 0.046 |0.056 |
+| BERTScore-F1 | 0.103 | 0.117 |0.119 |
+| SBERT cosine | 0.236 | 0.210 | 0.216|
 
 The parrot floor beats the zero-shot 7B on 7 of 8 similarity metrics.
 
