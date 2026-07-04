@@ -1,0 +1,19 @@
+{
+  "config": {
+    "model": "PARROT_FLOOR (repeat last utterance)",
+    "split": "test",
+    "n": 1592,
+    "labels_in_history": true,
+    "max_hist": 12
+  },
+  "metrics": {
+    "bleu": 1.5588995349267636,
+    "chrf": 12.910205847142528,
+    "rouge1": 0.11988511615034843,
+    "rouge2": 0.026580719480269167,
+    "rougeL": 0.10488617951220845,
+    "meteor": 0.06064790630493253,
+    "bertscore_f1": 0.1033894494175911,
+    "sbert_cosine": 0.23593026399612427
+  }
+}

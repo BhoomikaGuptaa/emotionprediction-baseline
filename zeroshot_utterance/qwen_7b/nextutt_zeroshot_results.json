@@ -1,0 +1,23 @@
+{
+  "config": {
+    "model": "Qwen/Qwen2.5-7B-Instruct",
+    "split": "test",
+    "n": 1592,
+    "labels_in_history": true,
+    "load_8bit": false,
+    "batch_size": 8,
+    "max_new_tokens": 64,
+    "max_hist": 12,
+    "dtype": "torch.bfloat16"
+  },
+  "metrics": {
+    "bleu": 0.7030679366165222,
+    "chrf": 10.842360313275025,
+    "rouge1": 0.11089923712415173,
+    "rouge2": 0.018396364774063475,
+    "rougeL": 0.10028065913081016,
+    "meteor": 0.04577360741019511,
+    "bertscore_f1": 0.11651559919118881,
+    "sbert_cosine": 0.2098398208618164
+  }
+}
