@@ -28,3 +28,5 @@ The parrot has no model. Its "prediction" is just a copy of the previous utteran
 It works because people in conversation echo each other: they repeat words, confirm, stay on topic. So the last utterance already overlaps a lot with the next one, and similarity metrics reward exactly that overlap.
 
 It is the utterance version of the persistence floor from the emotion task (repeat the last emotion, 0.7323 weighted F1, beat every trained model). It is a control, not a method: if a model cannot beat a copy of the last line, its predictions are not measurably closer to what the person actually said. The zero-shot 7B loses to it on 7 of 8 metrics, which shows how hard this task is and sets the bar for the trained model.
+
+**Note on reproducibility:** BERTScore values change across transformers library versions. All numbers in this table were scored under the same pinned environment (transformers < 4.46). Any model evaluated against these floors must be scored under the same pin, or the BERTScore column will not be comparable.
