@@ -12,7 +12,7 @@ on every similarity metric.
 
 ## 1. Utterance generation — similarity metrics (full IEMOCAP test, 1592 points)
 
-| Metric | Parrot floor | Zero-shot Qwen2.5-7B | Zero-shot GPT-4o-mini | Dialogue-sim Qwen2.5-7B | Dialogue-sim Llama-3.2-3B (original repo) | **Dialogue-sim SFT-only (ours, trained)** | Dialogue-sim SFT+GRPO (ours, trained) |
+| Metric | Parrot floor | Zero-shot Qwen2.5-7B | Zero-shot GPT-4o-mini | Dialogue-sim Qwen2.5-7B (only took their prompting technique)| Dialogue-sim Llama-3.2-3B (original repo+ only used for prompting)) | **Dialogue-sim SFT-only (reproduced SFT)** | Dialogue-sim (reproduced SFT+GRPO) |
 |---|---|---|---|---|---|---|---|
 | BLEU | **1.56** | 0.70 | 0.83 | 0.77 | 1.06 | 0.86 | 0.79 |
 | chrF | 12.91 | 10.84 | 12.01 | **15.73** | 15.31 | 10.55 | 10.10 |
