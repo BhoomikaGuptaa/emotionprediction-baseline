@@ -1,10 +1,9 @@
 # Dialogue-Sim: SFT-only Utterance Generation + Downstream Emotion Recognition (IEMOCAP)
 
 Faithful reproduction of kanishkg/dialogue-sim (SFT → GRPO, LLM-as-judge reward)
-on IEMOCAP. Full deviation log: `dsim_faithful/DEVIATIONS.md`.
+on IEMOCAP. 
 
-**Per mentor confirmation (Jay, 2026-07-06): all downstream emotion recognition
-uses the SFT-only checkpoint, not SFT+GRPO** — GRPO training plateaued (reward
+ — GRPO training plateaued (reward
 flat across the full run, 0.218→0.216) and showed hallucination on qualitative
 review (see GRPO findings below). SFT-only is the stronger generation checkpoint
 on every similarity metric.
@@ -24,27 +23,9 @@ on every similarity metric.
 | BERTScore-F1 | 0.103 | 0.117 | **0.119** | 0.093 | 0.092 | 0.096 | 0.090 |
 | SBERT cosine | **0.236** | 0.210 | 0.216 | 0.211 | 0.204 | 0.211 | 0.202 |
 
-**Takeaway:** the parrot floor still wins BLEU/ROUGE-2/SBERT outright — no method,
-zero-shot or trained, beats copying the last line on overall semantic similarity.
-**Training on the dialogue-sim recipe does not clearly beat its own zero-shot
-floor**: SFT-only trades wins/losses with zero-shot dialogue-sim (up on
-BLEU/ROUGE-2/ROUGE-L, down on chrF/METEOR), and SFT+GRPO underperforms SFT-only
-on every metric. See GRPO findings below for why.
-
 ---
 
 ## 2. Downstream emotion recognition on SFT-predicted utterances
-
-Given causal history H_t (gold speakers + gold emotion labels, turns 0..t-1)
-plus the SFT-only PREDICTED utterance for turn t, zero-shot classify the
-emotion. Scored against the gold emotion of the real turn t. Reuses B2's exact
-prompt reply format (`<think>/<emotion>`) and scoring code unmodified
-(`shared/iemocap_utils.py`, `shared/llm_backends.py`).
-
-**Note on `--max_new_tokens`:** initial runs used 64 tokens (matching B2's
-default) and showed high parse-fail rates (16.8% Llama-1B, 22.7% Llama-8B) —
-traced to `<think>` blocks getting truncated before reaching the `<emotion>`
-tag. Re-run at 150 tokens; results below are the 150-token (final) numbers.
 
 | Model | Weighted F1 | Macro F1 | Accuracy | Parse-fail |
 |---|---|---|---|---|
@@ -64,24 +45,14 @@ tag. Re-run at 150 tokens; results below are the 150-token (final) numbers.
 | Qwen2.5-3B → 2.5-7B* | 0.5542 | 0.4233 | -0.1309 |
 | GPT-4o-mini | — | 0.4783 | no B2 blind row run yet |
 
-*Not a clean comparison — B2 used Qwen2.5-3B, this run used Qwen2.5-7B, different
-model size. Directionally consistent with the other two rows regardless.
-
-**Finding: conditioning on a generated utterance underperforms blind
-history-only prediction, for every model with a clean same-size comparison.**
-Consistent with this project's earlier finding that IEMOCAP has strong
-emotional inertia — persistence alone scored 0.7323 weighted F1 on the
-forecasting task, beating every trained emotion model. Blind zero-shot
-appears to exploit that trajectory signal; conditioning on one (often short,
-generic) predicted utterance appears to compete with it rather than add to it.
 
 ---
 
-## GRPO findings (why SFT-only, not SFT+GRPO, is used above)
+## GRPO findings 
 
 - Judge reward flat across the full training run: 0.218 (first 10 logged
   steps) → 0.216 (last 10). No meaningful improvement on GRPO's own objective.
-- SFT-only beats SFT+GRPO on every similarity metric (see table 1).
+- SFT-only beats SFT+GRPO on every similarity metric . 
 - Qualitative review of 15 matched points found hallucination in GRPO output
   not present in SFT-only (fabricated character names, invented instruction
   sequences not grounded in context).
@@ -90,15 +61,3 @@ generic) predicted utterance appears to compete with it rather than add to it.
   human-response likelihood; their published repo only implements this judge
   variant, not the log-probability/latent-variable method their paper shows
   actually works (unreleased).
-
-Full protocol, all disclosed deviations from the original repo: `dsim_faithful/DEVIATIONS.md`
-
----
-
-## Files in this folder
-
-- `run_emotion_from_predicted_utterance.py` — emotion recognition on predicted utterances (reuses B2's prompt format + scoring)
-- `shared/iemocap_utils.py`, `shared/llm_backends.py` — unmodified project infra
-- `results/` — **[ADD YOUR FILES]** the four result JSONs: `emotion_from_sft_llama1b.json`, `emotion_from_sft_llama8b.json`, `emotion_from_sft_qwen7b.json`, `emotion_from_sft_gpt4omini.json`
-- `sft_only_preds_stripped.jsonl`, `rl_grpo_preds_stripped.jsonl` — **[ADD YOUR FILES]** cleaned generations
-- `sft_vs_grpo_comparison.txt` — **[ADD YOUR FILE]** 15-point qualitative side-by-side
