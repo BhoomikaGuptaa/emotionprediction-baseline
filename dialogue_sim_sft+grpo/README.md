@@ -43,7 +43,6 @@ on every similarity metric.
 | Llama-3.2-1B | 0.4150 | 0.3553 | **-0.0597** |
 | Llama-3.1-8B | 0.5981 | 0.3667 | **-0.2314** |
 | Qwen2.5-3B → 2.5-7B* | 0.5542 | 0.4233 | -0.1309 |
-| GPT-4o-mini | — | 0.4783 | no B2 blind row run yet |
 
 
 ---
