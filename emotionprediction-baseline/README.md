@@ -15,7 +15,7 @@ Each baseline is a faithful reimplementation following its paper, adapted to for
 | B1 | Transition matrix | heuristic | 0.5708 |
 | B2 | Zero-shot (Llama-8B) | prompting | 0.5981 |
 | B3 | Few-shot k=6 (Qwen-3B) | prompting | 0.6223 |
-| B6 | InstructERC | generative LLM + retrieval | |
+| B6 | InstructERC | generative LLM + retrieval |0.6678 |
 | B7 | EACL | contrastive encoder | 0.5921 |
 | B8 | DialogueRNN | recurrent | 0.4714 |
 | B9 | DualGATs | graph (planned) | |
