@@ -1,26 +1,50 @@
-# Ablations - B4 / B5 (Reinforcement Learning, reward-design ablation)
+# B4 / B5 Reward Ablations
 
-These are NOT external baselines. They are two variants of our own SFT -> GRPO pipeline that differ ONLY in the reward, included as a reward-design ablation.
+B4 and B5 are two variants of the same SFT → GRPO emotion-forecasting pipeline. They differ only in the GRPO reward.
 
-**Method:** Qwen2.5-3B + LoRA. Stage 1: SFT (2 epochs) to teach the output format. Stage 2: GRPO reinforcement learning (300 steps). The two variants share the SFT stage and diverge only at the reward.
+## Task
 
-**B4 - discrete reward:** 0.2 format + 0.2 valid-label + 0.6 exact-match correct.
+Given the dialogue history, previous emotion labels, and the next speaker, predict the next emotion without seeing the target utterance text.
 
-**B5 - V/A reward:** 0.2 format + 0.2 valid-label + 0.6 x valence/arousal similarity (partial credit for close emotions).
+## Setup
 
-**Task:** Emotion forecasting (causal next-emotion prediction): given the dialogue history (past turns with their gold emotion labels) and the next speaker, predict the next turn's emotion WITHOUT seeing that turn's text. Metric: prior weighted F1 over turns t>=1.
+- Base model: Qwen2.5-3B-Instruct
+- LoRA: `r=16`, `alpha=32`
+- SFT: 2 epochs
+- GRPO: 300 steps
+- Candidates per prompt: 2
+- Seed: 42
+- Dataset: canonical IEMOCAP 100/20/31 split
+- Primary metric: prior weighted F1 over targets at `t >= 1`
 
-**Settings:** Qwen2.5-3B + LoRA (r=16, alpha=32). SFT 2 epochs. GRPO 300 steps, 2 candidates/prompt. Seeds 42 and 43 (2-seed mean). The target emotion is used ONLY inside the reward function, never in the model's prompt (no leakage; no retrieval mechanism exists in this pipeline).
+## Rewards
 
-## Results (IEMOCAP, prior weighted F1, t>=1)
+### B4: Discrete reward
 
-| Variant | Stage | Weighted F1 | Macro F1 | Accuracy | Parse-fail |
-| --- | --- | --- | --- | --- | --- |
-| B4 discrete | SFT only (s43) | 0.6129 | | 0.5948 | 5.65% |
-| B4 discrete | GRPO (s43) | 0.6295 | | 0.6187 | 3.77% |
-| B4 discrete | GRPO (2-seed mean) | 0.6397 | | | |
-| B5 V/A | SFT only (s43) | 0.6129 | | 0.5948 | 5.65% |
-| B5 V/A | GRPO (s43) | 0.6324 | | 0.6256 | 2.32% |
-| B5 V/A | GRPO (2-seed mean) | 0.6361 | | | |
+- 0.2 for correct format
+- 0.2 for a valid emotion label
+- 0.6 for an exact match
 
-Note: B4 and B5 share the SFT stage (identical SFT numbers are expected, not a copy-paste error). GRPO improves over SFT in every run. On exact-match the two rewards tie; the V/A reward's advantage appears only under a continuous metric.
+### B5: Valence/Arousal reward
+
+- 0.2 for correct format
+- 0.2 for a valid emotion label
+- 0.6 × valence/arousal similarity
+
+## Results
+
+| Variant | Stage | Weighted F1 | Macro F1 | Accuracy | Parse Failures | ES F1 | No-Shift F1 |
+|---|---|---:|---:|---:|---:|---:|---:|
+| B4 discrete | SFT only | — | — | — | — | — | — |
+| B4 discrete | SFT → GRPO | **0.6320** | **0.6304** | **0.6225** | 46/1592 (2.9%) | **0.1967** | **0.7876** |
+| B5 V/A | SFT only | — | — | — | — | — | — |
+| B5 V/A | SFT → GRPO | — | — | — | — | — | — |
+
+For B4, the best development checkpoint was selected at step 200 with development weighted F1 `0.6328`.
+
+## Status
+
+- B4 SFT-only: running
+- B4 SFT → GRPO: complete
+- B5 SFT-only: pending
+- B5 SFT → GRPO: pending
