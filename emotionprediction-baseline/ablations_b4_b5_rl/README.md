@@ -35,8 +35,8 @@ Given the dialogue history, previous emotion labels, and the next speaker, predi
 
 | Variant | Stage | Weighted F1 | Macro F1 | Accuracy | Parse Failures | ES F1 | No-Shift F1 |
 |---|---|---:|---:|---:|---:|---:|---:|
-| B4 discrete | SFT only | — | — | — | — | — | — |
-| B4 discrete | SFT → GRPO | **0.6320** | **0.6304** | **0.6225** | 46/1592 (2.9%) | **0.1967** | **0.7876** |
+| B4 discrete | SFT only | **0.6304** | **0.6284** | **0.6143** | **4.59%** | **0.1990** | **0.7874** |
+| B4 discrete | SFT → GRPO | **0.6320** | **0.6304** | **0.6225** | **2.9%** | **0.1967** | **0.7876** |
 | B5 V/A | SFT only | — | — | — | — | — | — |
 | B5 V/A | SFT → GRPO | — | — | — | — | — | — |
 
