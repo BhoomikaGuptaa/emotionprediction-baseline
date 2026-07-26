@@ -37,14 +37,9 @@ Given the dialogue history, previous emotion labels, and the next speaker, predi
 |---|---|---:|---:|---:|---:|---:|---:|
 | B4 discrete | SFT only | **0.6304** | **0.6284** | **0.6143** | **4.59%** | **0.1990** | **0.7874** |
 | B4 discrete | SFT → GRPO | **0.6320** | **0.6304** | **0.6225** | **2.9%** | **0.1967** | **0.7876** |
-| B5 V/A | SFT only | — | — | — | — | — | — |
-| B5 V/A | SFT → GRPO | — | — | — | — | — | — |
+| B5 V/A | SFT-only | 0.6304 | 0.6284 | 0.6143 | 73/1592 (4.6%) | 0.1990 | 0.7874 |
+| B5 V/A | SFT + GRPO | 0.6521 | 0.6501 | 0.6413 | 47/1592 (3.0%) | 0.2042 | 0.8112 |
+
 
 For B4, the best development checkpoint was selected at step 200 with development weighted F1 `0.6328`.
-
-## Status
-
-- B4 SFT-only: running
-- B4 SFT → GRPO: complete
-- B5 SFT-only: pending
-- B5 SFT → GRPO: pending
+For B5, GRPO improved weighted F1 by 0.0217 over SFT-only. Most of the gain came from no-shift cases, while emotion-shift performance improved only slightly.
