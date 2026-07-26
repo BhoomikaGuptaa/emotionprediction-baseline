@@ -1,0 +1,44 @@
+{
+  "baseline": "B4",
+  "reward_kind": "discrete",
+  "reward": {
+    "format": 0.2,
+    "valid_label": 0.2,
+    "task": 0.6
+  },
+  "base_model": "/home/018217420/prediction/models/Qwen2.5-3B-Instruct",
+  "data_sha256": "18915267dfbb6fa8812c42757b148b143fab35e3fa525c0997763635825eefac",
+  "split": "canonical_100_20_31_dialogues",
+  "split_sample_counts": {
+    "train": 4730,
+    "dev": 960,
+    "test": 1592
+  },
+  "seed": 42,
+  "sft_epochs": 2.0,
+  "sft_lr": 1e-05,
+  "grpo_steps": 300,
+  "grpo_g": 2,
+  "grpo_lr": 1e-06,
+  "beta": 0.001,
+  "save_steps": 100,
+  "batch_size": 2,
+  "gradient_accumulation": 4,
+  "max_seq_len": 1024,
+  "max_new_tokens": 96,
+  "best_checkpoint": "/home/018217420/prediction/b4_final/b4_discrete/outputs/b4_full_seed42/checkpoint-200",
+  "best_dev_weighted_f1": 0.6328,
+  "command": "run.py --mode train --data_path /home/018217420/prediction/b4_final/IEMOCAP_features.pkl --base_model /home/018217420/prediction/models/Qwen2.5-3B-Instruct --output_dir /home/018217420/prediction/b4_final/b4_discrete/outputs/b4_full_seed42 --seed 42 --sft_epochs 2.0 --grpo_steps 300 --grpo_g 2 --save_steps 100 --batch_size 2 --grad_accum 4 --max_seq_len 1024 --max_new_tokens 96",
+  "git_commit": "n/a",
+  "versions": {
+    "python": "3.10.12",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.51.3",
+    "trl": "0.15.2",
+    "peft": "0.15.2",
+    "datasets": "3.6.0",
+    "accelerate": "1.8.1"
+  },
+  "timestamp_utc": "2026-07-25T04:13:25.597533+00:00",
+  "precision": "bf16 LoRA (not 4-bit)"
+}

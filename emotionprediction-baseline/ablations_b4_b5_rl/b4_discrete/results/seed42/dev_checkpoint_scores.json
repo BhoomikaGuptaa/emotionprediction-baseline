@@ -1,0 +1,17 @@
+[
+  {
+    "checkpoint": "/home/018217420/prediction/b4_final/b4_discrete/outputs/b4_full_seed42/checkpoint-100",
+    "step": 100,
+    "dev_weighted_f1": 0.6255
+  },
+  {
+    "checkpoint": "/home/018217420/prediction/b4_final/b4_discrete/outputs/b4_full_seed42/checkpoint-200",
+    "step": 200,
+    "dev_weighted_f1": 0.6328
+  },
+  {
+    "checkpoint": "/home/018217420/prediction/b4_final/b4_discrete/outputs/b4_full_seed42/checkpoint-300",
+    "step": 300,
+    "dev_weighted_f1": 0.632
+  }
+]
