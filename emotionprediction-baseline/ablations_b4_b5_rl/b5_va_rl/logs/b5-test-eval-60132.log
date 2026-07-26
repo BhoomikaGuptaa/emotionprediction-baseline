@@ -1,0 +1,129 @@
+===== B5 SFT-ONLY TEST EVALUATION =====
+Sliding Window Attention is enabled but not implemented for `eager`; unexpected results may be encountered.
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.11s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.61it/s]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.44it/s]
+/usr/local/lib/python3.10/dist-packages/transformers/generation/configuration_utils.py:636: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.8` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`.
+  warnings.warn(
+/usr/local/lib/python3.10/dist-packages/transformers/generation/configuration_utils.py:653: UserWarning: `do_sample` is set to `False`. However, `top_k` is set to `20` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_k`.
+  warnings.warn(
+  evaluated 100/1592
+  evaluated 200/1592
+  evaluated 300/1592
+  evaluated 400/1592
+  evaluated 500/1592
+  evaluated 600/1592
+  evaluated 700/1592
+  evaluated 800/1592
+  evaluated 900/1592
+  evaluated 1000/1592
+  evaluated 1100/1592
+  evaluated 1200/1592
+  evaluated 1300/1592
+  evaluated 1400/1592
+  evaluated 1500/1592
+
+=======================================================
+  B5 V/A direct GRPO
+=======================================================
+  Prior Weighted F1 : 0.6304   <- PRIMARY (t>=1, no x_t)
+  Macro F1          : 0.6284
+  Accuracy          : 0.6143
+  Parse failures    : 73/1592 (4.6%, scored wrong)
+
+  Per-class F1:
+    neutral         0.6145  ############
+    frustration     0.5575  ###########
+    sadness         0.6940  #############
+    anger           0.5678  ###########
+    excited         0.7556  ###############
+    happiness       0.5809  ###########
+
+              precision    recall  f1-score   support
+
+     neutral       0.67      0.57      0.61       372
+ frustration       0.54      0.57      0.56       380
+     sadness       0.81      0.61      0.69       238
+       anger       0.50      0.66      0.57       170
+     excited       0.75      0.76      0.76       289
+   happiness       0.71      0.49      0.58       143
+
+   micro avg       0.64      0.61      0.63      1592
+   macro avg       0.66      0.61      0.63      1592
+weighted avg       0.66      0.61      0.63      1592
+
+
+-------------------------------------------------------
+  B5 V/A direct GRPO -- ES / woES breakdown (same-speaker shift def.)
+-------------------------------------------------------
+  Emotion-shift (ES)   n=410   weighted F1=0.199
+  No-shift    (woES)   n=1151  weighted F1=0.7874
+  Undefined (no prior labelled turn) excluded: 31
+  Saved -> outputs/b5_full_seed42/evaluation/sft_only_predictions.json
+===== B5 SFT+GRPO TEST EVALUATION =====
+Sliding Window Attention is enabled but not implemented for `eager`; unexpected results may be encountered.
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.13s/it]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.57it/s]
+Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.41it/s]
+/usr/local/lib/python3.10/dist-packages/transformers/generation/configuration_utils.py:636: UserWarning: `do_sample` is set to `False`. However, `top_p` is set to `0.8` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_p`.
+  warnings.warn(
+/usr/local/lib/python3.10/dist-packages/transformers/generation/configuration_utils.py:653: UserWarning: `do_sample` is set to `False`. However, `top_k` is set to `20` -- this flag is only used in sample-based generation modes. You should set `do_sample=True` or unset `top_k`.
+  warnings.warn(
+  evaluated 100/1592
+  evaluated 200/1592
+  evaluated 300/1592
+  evaluated 400/1592
+  evaluated 500/1592
+  evaluated 600/1592
+  evaluated 700/1592
+  evaluated 800/1592
+  evaluated 900/1592
+  evaluated 1000/1592
+  evaluated 1100/1592
+  evaluated 1200/1592
+  evaluated 1300/1592
+  evaluated 1400/1592
+  evaluated 1500/1592
+
+=======================================================
+  B5 V/A direct GRPO
+=======================================================
+  Prior Weighted F1 : 0.6521   <- PRIMARY (t>=1, no x_t)
+  Macro F1          : 0.6501
+  Accuracy          : 0.6413
+  Parse failures    : 47/1592 (3.0%, scored wrong)
+
+  Per-class F1:
+    neutral         0.6248  ############
+    frustration     0.5854  ###########
+    sadness         0.7471  ##############
+    anger           0.5985  ###########
+    excited         0.7637  ###############
+    happiness       0.5809  ###########
+
+              precision    recall  f1-score   support
+
+     neutral       0.67      0.59      0.62       372
+ frustration       0.57      0.60      0.59       380
+     sadness       0.83      0.68      0.75       238
+       anger       0.52      0.71      0.60       170
+     excited       0.76      0.77      0.76       289
+   happiness       0.71      0.49      0.58       143
+
+   micro avg       0.66      0.64      0.65      1592
+   macro avg       0.68      0.64      0.65      1592
+weighted avg       0.67      0.64      0.65      1592
+
+
+-------------------------------------------------------
+  B5 V/A direct GRPO -- ES / woES breakdown (same-speaker shift def.)
+-------------------------------------------------------
+  Emotion-shift (ES)   n=410   weighted F1=0.2042
+  No-shift    (woES)   n=1151  weighted F1=0.8112
+  Undefined (no prior labelled turn) excluded: 31
+  Saved -> outputs/b5_full_seed42/evaluation/grpo_predictions.json
+===== B5 BOTH TEST EVALUATIONS COMPLETED =====

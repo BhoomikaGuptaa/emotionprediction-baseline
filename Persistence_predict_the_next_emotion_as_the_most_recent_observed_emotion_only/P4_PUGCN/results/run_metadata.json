@@ -1,0 +1,22 @@
+{
+  "command": "run.py --mode train --data_path /path/to/IEMOCAP_features.pkl --config config.yaml --output_dir outputs/full_seed42 --seed 42",
+  "config": {
+    "encoder": "/path/to/bart-base-local",
+    "learning_rate": 1e-05,
+    "batch_size": 16,
+    "alpha": 0.2,
+    "beta": 0.4,
+    "epochs": 15,
+    "dropout": 0.1,
+    "seed": 42,
+    "max_utt_length": 48,
+    "max_history_tokens": 512,
+    "gen_max_new_tokens": 24,
+    "contrast_temp": 0.1,
+    "convo_transformer_layers": 1,
+    "convo_transformer_heads": 8
+  },
+  "best_dev_weighted_f1": 0.5245,
+  "timestamp_utc": "2026-07-26T21:49:04.566110Z",
+  "git_commit": "n/a"
+}

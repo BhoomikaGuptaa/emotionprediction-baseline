@@ -1,0 +1,83 @@
+========================================
+P4 PUGCN FULL RUN
+Node: g23.hpc.coe
+Started: Sun Jul 26 11:52:21 AM PDT 2026
+Container: /path/to/container.sif
+Dataset: /path/to/IEMOCAP_features.pkl
+BART: /path/to/bart-base-local
+Output: outputs/full_seed42
+========================================
+Sun Jul 26 11:52:21 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 590.44.01              Driver Version: 590.44.01      CUDA Version: 13.1     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H100 NVL                Off |   00000000:C3:00.0 Off |                    0 |
+| N/A   28C    P0             58W /  350W |       0MiB /  95830MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+[data] train=4730 dev=960 test=1592 (test is NEVER subsampled)
+/usr/local/lib/python3.10/dist-packages/transformers/generation/configuration_utils.py:679: UserWarning: `num_beams` is set to 1. However, `early_stopping` is set to `True` -- this flag is only used in beam-based generation modes. You should set `num_beams>1` or unset `early_stopping`.
+  warnings.warn(
+epoch 1/15  CE=1.7408  CL=3.1941  PUG=2.9455  dev_wF1=0.2369
+/usr/local/lib/python3.10/dist-packages/transformers/generation/configuration_utils.py:679: UserWarning: `num_beams` is set to 1. However, `early_stopping` is set to `True` -- this flag is only used in beam-based generation modes. You should set `num_beams>1` or unset `early_stopping`.
+  warnings.warn(
+epoch 2/15  CE=1.4707  CL=3.1119  PUG=2.6919  dev_wF1=0.4536
+/usr/local/lib/python3.10/dist-packages/transformers/generation/configuration_utils.py:679: UserWarning: `num_beams` is set to 1. However, `early_stopping` is set to `True` -- this flag is only used in beam-based generation modes. You should set `num_beams>1` or unset `early_stopping`.
+  warnings.warn(
+epoch 3/15  CE=1.1968  CL=3.0318  PUG=2.5737  dev_wF1=0.4706
+/usr/local/lib/python3.10/dist-packages/transformers/generation/configuration_utils.py:679: UserWarning: `num_beams` is set to 1. However, `early_stopping` is set to `True` -- this flag is only used in beam-based generation modes. You should set `num_beams>1` or unset `early_stopping`.
+  warnings.warn(
+epoch 4/15  CE=1.1011  CL=2.9646  PUG=2.4735  dev_wF1=0.4336
+/usr/local/lib/python3.10/dist-packages/transformers/generation/configuration_utils.py:679: UserWarning: `num_beams` is set to 1. However, `early_stopping` is set to `True` -- this flag is only used in beam-based generation modes. You should set `num_beams>1` or unset `early_stopping`.
+  warnings.warn(
+epoch 5/15  CE=1.0397  CL=2.9159  PUG=2.3895  dev_wF1=0.4312
+/usr/local/lib/python3.10/dist-packages/transformers/generation/configuration_utils.py:679: UserWarning: `num_beams` is set to 1. However, `early_stopping` is set to `True` -- this flag is only used in beam-based generation modes. You should set `num_beams>1` or unset `early_stopping`.
+  warnings.warn(
+epoch 6/15  CE=0.9964  CL=2.9055  PUG=2.3122  dev_wF1=0.4998
+/usr/local/lib/python3.10/dist-packages/transformers/generation/configuration_utils.py:679: UserWarning: `num_beams` is set to 1. However, `early_stopping` is set to `True` -- this flag is only used in beam-based generation modes. You should set `num_beams>1` or unset `early_stopping`.
+  warnings.warn(
+epoch 7/15  CE=0.9711  CL=2.8790  PUG=2.2462  dev_wF1=0.4976
+/usr/local/lib/python3.10/dist-packages/transformers/generation/configuration_utils.py:679: UserWarning: `num_beams` is set to 1. However, `early_stopping` is set to `True` -- this flag is only used in beam-based generation modes. You should set `num_beams>1` or unset `early_stopping`.
+  warnings.warn(
+epoch 8/15  CE=0.9453  CL=2.8680  PUG=2.1912  dev_wF1=0.4689
+/usr/local/lib/python3.10/dist-packages/transformers/generation/configuration_utils.py:679: UserWarning: `num_beams` is set to 1. However, `early_stopping` is set to `True` -- this flag is only used in beam-based generation modes. You should set `num_beams>1` or unset `early_stopping`.
+  warnings.warn(
+epoch 9/15  CE=0.9297  CL=2.8596  PUG=2.1307  dev_wF1=0.4739
+/usr/local/lib/python3.10/dist-packages/transformers/generation/configuration_utils.py:679: UserWarning: `num_beams` is set to 1. However, `early_stopping` is set to `True` -- this flag is only used in beam-based generation modes. You should set `num_beams>1` or unset `early_stopping`.
+  warnings.warn(
+epoch 10/15  CE=0.9117  CL=2.8511  PUG=2.0801  dev_wF1=0.4682
+/usr/local/lib/python3.10/dist-packages/transformers/generation/configuration_utils.py:679: UserWarning: `num_beams` is set to 1. However, `early_stopping` is set to `True` -- this flag is only used in beam-based generation modes. You should set `num_beams>1` or unset `early_stopping`.
+  warnings.warn(
+epoch 11/15  CE=0.8979  CL=2.8338  PUG=2.0230  dev_wF1=0.4779
+/usr/local/lib/python3.10/dist-packages/transformers/generation/configuration_utils.py:679: UserWarning: `num_beams` is set to 1. However, `early_stopping` is set to `True` -- this flag is only used in beam-based generation modes. You should set `num_beams>1` or unset `early_stopping`.
+  warnings.warn(
+epoch 12/15  CE=0.8785  CL=2.8283  PUG=1.9774  dev_wF1=0.5212
+/usr/local/lib/python3.10/dist-packages/transformers/generation/configuration_utils.py:679: UserWarning: `num_beams` is set to 1. However, `early_stopping` is set to `True` -- this flag is only used in beam-based generation modes. You should set `num_beams>1` or unset `early_stopping`.
+  warnings.warn(
+epoch 13/15  CE=0.8549  CL=2.8220  PUG=1.9313  dev_wF1=0.5098
+/usr/local/lib/python3.10/dist-packages/transformers/generation/configuration_utils.py:679: UserWarning: `num_beams` is set to 1. However, `early_stopping` is set to `True` -- this flag is only used in beam-based generation modes. You should set `num_beams>1` or unset `early_stopping`.
+  warnings.warn(
+epoch 14/15  CE=0.8293  CL=2.7997  PUG=1.8938  dev_wF1=0.4318
+/usr/local/lib/python3.10/dist-packages/transformers/generation/configuration_utils.py:679: UserWarning: `num_beams` is set to 1. However, `early_stopping` is set to `True` -- this flag is only used in beam-based generation modes. You should set `num_beams>1` or unset `early_stopping`.
+  warnings.warn(
+epoch 15/15  CE=0.8033  CL=2.7969  PUG=1.8446  dev_wF1=0.5245
+Best dev wF1=0.5245. Saved -> outputs/full_seed42/best.pt
+========================================
+P4 FULL TRAINING COMPLETED
+Finished: Sun Jul 26 02:49:05 PM PDT 2026
+-rw-r--r-- 1 018217420 nsf-jg 992M Jul 26 14:49 outputs/full_seed42/best.pt
+best.pt 1040123581 bytes
+run_metadata.json 714 bytes
+========================================

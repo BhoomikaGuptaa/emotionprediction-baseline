@@ -1,0 +1,17 @@
+{
+  "command": "run.py --mode train --data_path /path/to/IEMOCAP_features.pkl --config config.yaml --cache_dir outputs/cache --output_dir outputs/full",
+  "config": {
+    "gnn_layers": 4,
+    "learning_rate": 0.0005,
+    "batch_size": 16,
+    "epochs": 30,
+    "dropout": 0.2,
+    "seed": 42,
+    "window": 10,
+    "hidden": 300,
+    "encoder": "roberta-large"
+  },
+  "best_dev_weighted_f1": 0.6624,
+  "timestamp_utc": "2026-07-26T22:42:20.923996Z",
+  "git_commit": "n/a (not a git repo or git unavailable)"
+}

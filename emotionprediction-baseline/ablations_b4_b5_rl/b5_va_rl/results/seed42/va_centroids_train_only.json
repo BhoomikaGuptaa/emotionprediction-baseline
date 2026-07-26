@@ -1,0 +1,91 @@
+{
+  "centroids": {
+    "neutral": [
+      -0.003320179948586117,
+      -0.13121221079691517
+    ],
+    "frustration": [
+      -0.3720630113141863,
+      0.07629791122715406
+    ],
+    "sadness": [
+      -0.35137591339648166,
+      -0.2428958051420839
+    ],
+    "anger": [
+      -0.5614154008438819,
+      0.3260663853727145
+    ],
+    "excited": [
+      0.5061829032258064,
+      0.31055112903225807
+    ],
+    "happiness": [
+      0.4672617346938776,
+      0.050170153061224486
+    ]
+  },
+  "counts": {
+    "neutral": 1167,
+    "frustration": 1149,
+    "sadness": 739,
+    "anger": 711,
+    "excited": 620,
+    "happiness": 392
+  },
+  "similarity": {
+    "neutral": {
+      "neutral": 1.0,
+      "frustration": 0.6037116848098727,
+      "sadness": 0.6576459017919103,
+      "anger": 0.32424775080351864,
+      "excited": 0.36841503820571087,
+      "happiness": 0.5276548157466043
+    },
+    "frustration": {
+      "neutral": 0.6037116848098727,
+      "frustration": 1.0,
+      "sadness": 0.7004213942874711,
+      "anger": 0.7064464142720115,
+      "excited": 0.14869270634709197,
+      "happiness": 0.21352192761302846
+    },
+    "sadness": {
+      "neutral": 0.6576459017919103,
+      "frustration": 0.7004213942874711,
+      "sadness": 1.0,
+      "anger": 0.4319683521142975,
+      "excited": 0.044083812969219593,
+      "happiness": 0.18562762094629015
+    },
+    "anger": {
+      "neutral": 0.32424775080351864,
+      "frustration": 0.7064464142720115,
+      "sadness": 0.4319683521142975,
+      "anger": 1.0,
+      "excited": 0.0,
+      "happiness": 0.002508166269576617
+    },
+    "excited": {
+      "neutral": 0.36841503820571087,
+      "frustration": 0.14869270634709197,
+      "sadness": 0.044083812969219593,
+      "anger": 0.0,
+      "excited": 1.0,
+      "happiness": 0.7534222075852746
+    },
+    "happiness": {
+      "neutral": 0.5276548157466043,
+      "frustration": 0.21352192761302846,
+      "sadness": 0.18562762094629015,
+      "anger": 0.002508166269576617,
+      "excited": 0.7534222075852746,
+      "happiness": 1.0
+    }
+  },
+  "source": {
+    "type": "IEMOCAP_original_EmoEvaluation_train_dialogues_only",
+    "path": "/path/to/IEMOCAP"
+  },
+  "normalization": "(rating-3)/2 from original 1-5 scale"
+}

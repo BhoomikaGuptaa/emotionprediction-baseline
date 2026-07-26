@@ -1,0 +1,19 @@
+===== B5 SFT-ONLY TEST EVALUATION =====
+  Prior Weighted F1 : 0.6304   <- PRIMARY (t>=1, no x_t)
+  Macro F1          : 0.6284
+  Accuracy          : 0.6143
+  Parse failures    : 73/1592 (4.6%, scored wrong)
+  Emotion-shift (ES)   n=410   weighted F1=0.199
+  No-shift    (woES)   n=1151  weighted F1=0.7874
+  Undefined (no prior labelled turn) excluded: 31
+  Saved -> outputs/b5_full_seed42/evaluation/sft_only_predictions.json
+===== B5 SFT+GRPO TEST EVALUATION =====
+  Prior Weighted F1 : 0.6521   <- PRIMARY (t>=1, no x_t)
+  Macro F1          : 0.6501
+  Accuracy          : 0.6413
+  Parse failures    : 47/1592 (3.0%, scored wrong)
+  Emotion-shift (ES)   n=410   weighted F1=0.2042
+  No-shift    (woES)   n=1151  weighted F1=0.8112
+  Undefined (no prior labelled turn) excluded: 31
+  Saved -> outputs/b5_full_seed42/evaluation/grpo_predictions.json
+===== B5 BOTH TEST EVALUATIONS COMPLETED =====

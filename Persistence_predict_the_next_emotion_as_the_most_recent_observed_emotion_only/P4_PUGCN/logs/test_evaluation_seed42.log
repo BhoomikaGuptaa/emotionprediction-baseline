@@ -1,0 +1,43 @@
+[data] train=4730 dev=960 test=1592 (test is NEVER subsampled)
+/usr/local/lib/python3.10/dist-packages/transformers/generation/configuration_utils.py:679: UserWarning: `num_beams` is set to 1. However, `early_stopping` is set to `True` -- this flag is only used in beam-based generation modes. You should set `num_beams>1` or unset `early_stopping`.
+  warnings.warn(
+
+=======================================================
+  P4 PUGCN adapted to canonical IEMOCAP forecasting (v2)
+=======================================================
+  Prior Weighted F1 : 0.5186   <- PRIMARY (t>=1, no x_t)
+  Macro F1          : 0.5190
+  Accuracy          : 0.5226
+  Parse failures    : 0/1592 (0.0%, scored wrong)
+
+  Per-class F1:
+    neutral         0.3754  #######
+    frustration     0.5723  ###########
+    sadness         0.5372  ##########
+    anger           0.5183  ##########
+    excited         0.6421  ############
+    happiness       0.4687  #########
+
+              precision    recall  f1-score   support
+
+     neutral       0.45      0.32      0.38       372
+ frustration       0.46      0.77      0.57       380
+     sadness       0.73      0.42      0.54       238
+       anger       0.60      0.46      0.52       170
+     excited       0.79      0.54      0.64       289
+   happiness       0.38      0.60      0.47       143
+
+    accuracy                           0.52      1592
+   macro avg       0.57      0.52      0.52      1592
+weighted avg       0.57      0.52      0.52      1592
+
+
+-------------------------------------------------------
+  P4 PUGCN adapted to canonical IEMOCAP forecasting (v2) -- ES / woES breakdown (same-speaker shift def.)
+-------------------------------------------------------
+  Emotion-shift (ES)   n=410   weighted F1=0.4138
+  No-shift    (woES)   n=1151  weighted F1=0.5585
+  Undefined (no prior labelled turn) excluded: 31
+  Saved -> outputs/full_seed42/predictions.json
+Prediction rows: 1592
+P4 TEST EVALUATION COMPLETED
