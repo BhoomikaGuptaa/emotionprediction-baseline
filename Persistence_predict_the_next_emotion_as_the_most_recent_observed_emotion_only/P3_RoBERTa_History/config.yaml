@@ -1,0 +1,10 @@
+# P3 — RoBERTa-History config
+encoder: roberta-base
+max_length: 256
+learning_rate: 2.0e-5
+batch_size: 8
+gradient_accumulation_steps: 2
+epochs: 5
+weight_decay: 0.01
+seed: 42
+max_history_turns: 10     # how many prior turns to flatten into the input (matches format_history default elsewhere in this project)

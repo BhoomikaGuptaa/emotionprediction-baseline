@@ -1,0 +1,11 @@
+{
+  "model": "P0 Persistence",
+  "definition": "Predict the next emotion as the most recent observed emotion in the causal dialogue history.",
+  "dataset": "IEMOCAP",
+  "protocol": "canonical 100/20/31 dialogue split; t>=1; target utterance hidden",
+  "weighted_f1": 0.7323,
+  "macro_f1": 0.7276,
+  "accuracy": 0.7337,
+  "source": "Existing b1_floors/README.md in the uploaded repository snapshot",
+  "note": "No standalone prediction file for this run was present in the uploaded snapshot."
+}

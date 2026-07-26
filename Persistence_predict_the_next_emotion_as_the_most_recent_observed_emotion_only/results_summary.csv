@@ -1,0 +1,6 @@
+id,method,category,weighted_f1,macro_f1,accuracy,es_weighted_f1,no_shift_weighted_f1,status
+P0,Persistence,Deterministic inertia baseline,0.7323,0.7276,0.7337,,,final reported result
+P2,DAG-ERC-F,Custom causal graph adaptation,,,,,,
+P3,RoBERTa-History,Supervised history encoder,0.6703,0.6707,0.6702,0.2160,0.8391,final seed42 result
+P4,PUGCN adaptation,Pseudo-utterance graph forecasting model,,,,,,
+P5,Speaker transition,Deterministic train-only transition heuristic,0.7267,0.7227,0.7268,0.0000,1.0000,final seed42 result

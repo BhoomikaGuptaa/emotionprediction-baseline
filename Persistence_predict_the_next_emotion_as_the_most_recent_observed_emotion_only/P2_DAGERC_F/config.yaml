@@ -1,0 +1,15 @@
+# P2 — DAG-ERC-F config
+# Starting point matches the DAG-ERC paper's own IEMOCAP config
+# (github.com/shenwzh3/DAG-ERC: gnn_layers=4, lr=0.0005, batch_size=16,
+# epochs=30, dropout=0.2). See README.md "Deviations" for what "batch_size"
+# means in this dependency-light reimplementation (gradient-accumulation
+# grouping, not padded-tensor batching -- disclosed, not hidden).
+gnn_layers: 4
+learning_rate: 0.0005
+batch_size: 16
+epochs: 30
+dropout: 0.2
+seed: 42
+window: 10               # local DAG edge window
+hidden: 300
+encoder: roberta-large    # frozen feature encoder (paper's own design: frozen features, not joint fine-tuning)

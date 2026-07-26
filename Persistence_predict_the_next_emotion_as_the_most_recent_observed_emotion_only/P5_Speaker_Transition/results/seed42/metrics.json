@@ -1,0 +1,150 @@
+{
+  "metrics": {
+    "n_total": 1592,
+    "weighted_f1": 0.7267,
+    "macro_f1": 0.7227,
+    "accuracy": 0.7268,
+    "valid_prediction_rate": 1.0,
+    "per_class_f1": {
+      "neutral": 0.7346,
+      "frustration": 0.6419,
+      "sadness": 0.8235,
+      "anger": 0.6444,
+      "excited": 0.8276,
+      "happiness": 0.6642
+    },
+    "confusion_matrix": {
+      "labels": [
+        "neutral",
+        "frustration",
+        "sadness",
+        "anger",
+        "excited",
+        "happiness"
+      ],
+      "matrix": [
+        [
+          274,
+          60,
+          11,
+          5,
+          10,
+          12
+        ],
+        [
+          56,
+          251,
+          17,
+          46,
+          9,
+          1
+        ],
+        [
+          9,
+          24,
+          196,
+          2,
+          3,
+          4
+        ],
+        [
+          9,
+          52,
+          3,
+          106,
+          0,
+          0
+        ],
+        [
+          13,
+          12,
+          3,
+          0,
+          240,
+          21
+        ],
+        [
+          13,
+          3,
+          8,
+          0,
+          29,
+          90
+        ]
+      ]
+    },
+    "emotion_shift": {
+      "weighted_f1": 0.0,
+      "macro_f1": 0.0,
+      "accuracy": 0.0,
+      "n": 410
+    },
+    "no_shift": {
+      "weighted_f1": 1.0,
+      "macro_f1": 1.0,
+      "accuracy": 1.0,
+      "n": 1151
+    },
+    "undefined_shift_excluded": 31,
+    "classification_report": {
+      "neutral": {
+        "precision": 0.732620320855615,
+        "recall": 0.7365591397849462,
+        "f1-score": 0.7345844504021448,
+        "support": 372.0
+      },
+      "frustration": {
+        "precision": 0.6243781094527363,
+        "recall": 0.6605263157894737,
+        "f1-score": 0.6419437340153452,
+        "support": 380.0
+      },
+      "sadness": {
+        "precision": 0.8235294117647058,
+        "recall": 0.8235294117647058,
+        "f1-score": 0.8235294117647058,
+        "support": 238.0
+      },
+      "anger": {
+        "precision": 0.6666666666666666,
+        "recall": 0.6235294117647059,
+        "f1-score": 0.6443768996960486,
+        "support": 170.0
+      },
+      "excited": {
+        "precision": 0.8247422680412371,
+        "recall": 0.8304498269896193,
+        "f1-score": 0.8275862068965517,
+        "support": 289.0
+      },
+      "happiness": {
+        "precision": 0.703125,
+        "recall": 0.6293706293706294,
+        "f1-score": 0.6642066420664207,
+        "support": 143.0
+      },
+      "accuracy": 0.7267587939698492,
+      "macro avg": {
+        "precision": 0.7291769627968269,
+        "recall": 0.71732745591068,
+        "f1-score": 0.7227045574735361,
+        "support": 1592.0
+      },
+      "weighted avg": {
+        "precision": 0.7274052542384293,
+        "recall": 0.7267587939698492,
+        "f1-score": 0.7266972807992204,
+        "support": 1592.0
+      }
+    }
+  },
+  "run_metadata": {
+    "command": "/content/p0_evaluation/run_eval.py --preds /content/p5_outputs/predictions.json --data_path /content/IEMOCAP_features.pkl --loader pkl --split test --out /content/p0_outputs/P5_speaker_transition_metrics.json",
+    "preds_file": "/content/p5_outputs/predictions.json",
+    "mode": "rich",
+    "data_path": "/content/IEMOCAP_features.pkl",
+    "split": "test",
+    "timestamp_utc": "2026-07-25T01:08:51.648685Z",
+    "git_commit": "n/a (not a git repo or git unavailable)"
+  }
+}

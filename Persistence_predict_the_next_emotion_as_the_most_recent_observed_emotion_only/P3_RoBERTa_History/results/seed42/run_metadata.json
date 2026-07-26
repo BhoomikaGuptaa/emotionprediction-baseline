@@ -1,0 +1,17 @@
+{
+  "command": "/content/p3_roberta/run.py --mode train --data_path /content/iemocap.pkl --config /content/p3_roberta/config.yaml --output_dir /content/p3_roberta/outputs/full",
+  "config": {
+    "encoder": "roberta-base",
+    "max_length": 256,
+    "learning_rate": 2e-05,
+    "batch_size": 8,
+    "gradient_accumulation_steps": 2,
+    "epochs": 5,
+    "weight_decay": 0.01,
+    "seed": 42,
+    "max_history_turns": 10
+  },
+  "best_dev_weighted_f1": 0.6725,
+  "timestamp_utc": "2026-07-25T02:54:15.000462Z",
+  "git_commit": "n/a"
+}

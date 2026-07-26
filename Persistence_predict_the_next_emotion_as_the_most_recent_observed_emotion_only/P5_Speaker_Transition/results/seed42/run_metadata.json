@@ -1,0 +1,15 @@
+{
+  "command": "/content/p5_speaker_transition/run.py --data_path /content/IEMOCAP_features.pkl --config /content/p5_speaker_transition/config.yaml --split test --save_path /content/p5_outputs/predictions.json --seed 42",
+  "config": {
+    "alpha": 1.0,
+    "seed": 42
+  },
+  "n_tier1_train_samples": 4630,
+  "tier_usage_on_eval_split": {
+    "tier1_learned_transition": 1561,
+    "tier2_majority_no_same_speaker_history": 31
+  },
+  "weighted_f1": 0.7267,
+  "timestamp_utc": "2026-07-25T01:08:36.159103Z",
+  "git_commit": "n/a"
+}

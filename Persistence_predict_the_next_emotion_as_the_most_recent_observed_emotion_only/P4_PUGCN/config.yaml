@@ -1,0 +1,19 @@
+# P4 — PUGCN adapted (v2, rebuilt against the actual paper, arXiv/DOI 10.1016/j.eswa.2025.127382)
+#
+# Values taken DIRECTLY from the paper (Section 4.3, confirmed from the PDF):
+encoder: facebook/bart-base   # paper says "BART" via HuggingFace Transformers but never states base/large explicitly in the visible text -- bart-base chosen for tractability, SEE README "Deviations" #1
+learning_rate: 1.0e-5          # paper's stated value
+batch_size: 16                 # paper's stated value (realized as gradient accumulation, see README)
+alpha: 0.2                     # paper's L_CL weight for MELD/EmoryNLP (0.3 for DailyDialog -- we're on IEMOCAP, paper doesn't cover it, see README)
+beta: 0.4                      # paper's L_PUG weight for MELD/EmoryNLP
+
+# Values NOT stated in the paper (or paper covers a different dataset)-- our own choices, flagged:
+epochs: 15                     # paper trains to convergence on a dev set + averages 5 seeds; we don't have "epochs" stated, pick a reasonable ceiling with dev-based early checkpoint selection
+dropout: 0.1
+seed: 42
+max_utt_length: 48             # per-utterance token truncation (paper doesn't state this either)
+max_history_tokens: 512        # truncate the concatenated-history generation-encoder input by tokenizer length (see README)
+gen_max_new_tokens: 24         # cap on pseudo-utterance generation length (compute control)
+contrast_temp: 0.1             # tau in Eq. 11 -- paper calls it "a scalar temperature parameter" but never gives a number
+convo_transformer_layers: 1    # paper describes ONE conversation-level Transformer layer (Eq. 6-9) -- we use 1 to follow the paper
+convo_transformer_heads: 8

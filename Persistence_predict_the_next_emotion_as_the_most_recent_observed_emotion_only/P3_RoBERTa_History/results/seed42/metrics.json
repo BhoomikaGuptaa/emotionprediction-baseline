@@ -1,0 +1,30 @@
+{
+  "model": "P3 RoBERTa-History",
+  "weighted_f1": 0.6703,
+  "macro_f1": 0.6707,
+  "accuracy": 0.6702,
+  "parse_fail_rate": 0.0,
+  "per_class_f1": {
+    "neutral": 0.6525,
+    "frustration": 0.5763,
+    "sadness": 0.771,
+    "anger": 0.6,
+    "excited": 0.7958,
+    "happiness": 0.6289
+  },
+  "shift_breakdown": {
+    "es": {
+      "weighted_f1": 0.216,
+      "macro_f1": 0.199,
+      "accuracy": 0.2171,
+      "n": 410
+    },
+    "woes": {
+      "weighted_f1": 0.8391,
+      "macro_f1": 0.8375,
+      "accuracy": 0.8384,
+      "n": 1151
+    },
+    "undefined_n": 31
+  }
+}
