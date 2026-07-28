@@ -1,0 +1,18 @@
+Dialogue-Sim prompt with Qwen2.5-7B
+Fixed downstream labeler: Qwen/Qwen2.5-7B-Instruct
+
+{
+  "n": 1592,
+  "weighted_f1": 0.3135952278437108,
+  "macro_f1": 0.32173706899107163,
+  "accuracy": 0.3015075376884422,
+  "parse_failures": 5,
+  "es_n": 410,
+  "es_weighted_f1": 0.2217328314941822,
+  "no_shift_n": 1151,
+  "no_shift_weighted_f1": 0.3541849226239715,
+  "undefined_n": 31,
+  "source_id": "dialoguesim_qwen7b",
+  "source_title": "Dialogue-Sim prompt with Qwen2.5-7B",
+  "labeler_model": "Qwen/Qwen2.5-7B-Instruct"
+}

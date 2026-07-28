@@ -1,0 +1,48 @@
+{
+  "title": "openai_gpt4omini_corrected_parser",
+  "n": 1592,
+  "weighted_f1": 0.3407732740780412,
+  "macro_f1": 0.33767418008958056,
+  "accuracy": 0.3285175879396985,
+  "per_class_f1": {
+    "neutral": 0.15151515151515152,
+    "frustration": 0.3567567567567568,
+    "sadness": 0.2591549295774648,
+    "anger": 0.39183673469387753,
+    "excited": 0.6204238921001927,
+    "happiness": 0.24635761589403973
+  },
+  "parse_failures": 4,
+  "es_n": 410,
+  "es_metrics": {
+    "weighted_f1": 0.17538439957563598,
+    "macro_f1": 0.18904129643640036,
+    "accuracy": 0.17804878048780487,
+    "per_class_f1": {
+      "neutral": 0.13559322033898305,
+      "frustration": 0.20869565217391303,
+      "sadness": 0.11627906976744186,
+      "anger": 0.15555555555555556,
+      "excited": 0.3409090909090909,
+      "happiness": 0.17721518987341772
+    }
+  },
+  "no_shift_n": 1151,
+  "no_shift_metrics": {
+    "weighted_f1": 0.40510763897872853,
+    "macro_f1": 0.39374283102789703,
+    "accuracy": 0.3848827106863597,
+    "per_class_f1": {
+      "neutral": 0.15671641791044777,
+      "frustration": 0.40093240093240096,
+      "sadness": 0.3056092843326886,
+      "anger": 0.5324675324675324,
+      "excited": 0.6872037914691943,
+      "happiness": 0.2795275590551181
+    }
+  },
+  "undefined_n": 31,
+  "source_id": "openai_gpt4omini",
+  "source_title": "GPT-4o-mini zero-shot predicted utterances",
+  "labeler_model": "Qwen/Qwen2.5-7B-Instruct"
+}

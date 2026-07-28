@@ -1,0 +1,15 @@
+{
+  "n": 1592,
+  "weighted_f1": 0.293100538137678,
+  "macro_f1": 0.3054889622418753,
+  "accuracy": 0.27638190954773867,
+  "parse_failures": 12,
+  "es_n": 410,
+  "es_weighted_f1": 0.191254938484486,
+  "no_shift_n": 1151,
+  "no_shift_weighted_f1": 0.33421222918162513,
+  "undefined_n": 31,
+  "source_id": "dialoguesim_llama3b",
+  "source_title": "Dialogue-Sim prompt with Llama-3B",
+  "labeler_model": "Qwen/Qwen2.5-7B-Instruct"
+}

@@ -1,0 +1,18 @@
+Parrot/repeat-last-utterance control
+Fixed downstream labeler: Qwen/Qwen2.5-7B-Instruct
+
+{
+  "n": 1592,
+  "weighted_f1": 0.40161900018363134,
+  "macro_f1": 0.4128256513780655,
+  "accuracy": 0.38944723618090454,
+  "parse_failures": 3,
+  "es_n": 410,
+  "es_weighted_f1": 0.17272137696138903,
+  "no_shift_n": 1151,
+  "no_shift_weighted_f1": 0.49059673582894525,
+  "undefined_n": 31,
+  "source_id": "parrot_floor",
+  "source_title": "Parrot/repeat-last-utterance control",
+  "labeler_model": "Qwen/Qwen2.5-7B-Instruct"
+}

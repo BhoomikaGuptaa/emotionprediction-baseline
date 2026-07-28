@@ -1,0 +1,18 @@
+Dialogue-Sim SFT-only predicted utterances
+Fixed downstream labeler: Qwen/Qwen2.5-7B-Instruct
+
+{
+  "n": 1592,
+  "weighted_f1": 0.29346168230386066,
+  "macro_f1": 0.292368208572597,
+  "accuracy": 0.2851758793969849,
+  "parse_failures": 7,
+  "es_n": 410,
+  "es_weighted_f1": 0.17298246252838131,
+  "no_shift_n": 1151,
+  "no_shift_weighted_f1": 0.3414329805629179,
+  "undefined_n": 31,
+  "source_id": "dialoguesim_sft_only",
+  "source_title": "Dialogue-Sim SFT-only predicted utterances",
+  "labeler_model": "Qwen/Qwen2.5-7B-Instruct"
+}
